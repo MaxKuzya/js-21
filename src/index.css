@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 50px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@keyframes fade-in-cards {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+li {
+  position: relative;
+  padding: 15px;
+  padding-right: 30px;
+  width: 200px;
+  margin-bottom: 20px;
+  border: 1px solid lightgrey;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  transition: 300ms ease;
+  transition-property: box-shadow, transform;
+  border-radius: 5px;
+  animation: fade-in-cards 300ms ease;
+}
+
+li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fade-in-button {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+li .button-remove-note {
+  display: none;
+}
+
+li:hover .button-remove-note {
+  display: block;
+}
+
+.button-remove-note {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  padding: 5px;
+  background-color: transparent;
+  opacity: 0.3;
+  transition-duration: 200ms;
+  animation: fade-in-button 300ms linear;
+}
+
+.button-remove-note:hover {
+  opacity: 1;
+}
